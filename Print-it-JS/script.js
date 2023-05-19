@@ -1,6 +1,3 @@
-document.addEventListener('DOMContentLoaded', function() {
-
-
 const slides = [
 	{
 		"image":"./assets/images/slideshow/slide1.jpg",
@@ -21,22 +18,12 @@ const slides = [
 ];
 
 let chiffre = 0;
-const imgElement = document.getElementById(".banner-img");
-const taglineElement = document.getElementById('#banner p ')
 
-function ChangeSlide(sens) {
+function ChangementDeSlide(sens) {
 	chiffre = chiffre + sens;
-	if (chiffre < 0) {
-		chiffre = slides.length - 1;
-	if (chiffre > slides.length -1)
-		chiffre = 0;
-		document.getElementById('.banner-img').src = slides[chiffre];
-	}
-	imgElement.src = slides[chiffre].image;
-	taglineElement.innerHTML = slides[chiffre].tagLine;
-
+	if (chiffre > slides.lengh - 1)
+	chiffre = 0;
+	if (chiffre < 0)
+	chiffre = slides.length - 1;
+	document.getElementById('slide').src = "assets/images/slideshow/" + slide[chiffre]; 
 }
-
-
-
-});
