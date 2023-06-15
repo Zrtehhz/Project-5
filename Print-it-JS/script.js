@@ -17,6 +17,14 @@ const slides = [
 	}
 ];
 
+// Je défini ( let ) la variable chiffre à 0.
+// Je créer une fonction appelé ChangementDeSlide avec un argument, ( sens) dans ma fonction j'y ajoute
+// la variable chiffre, qui est égal à 0, + le sens de mon slide ( si ces gauche ou droite ).
+// If (si) chiffre est supérieur au sens de mon slides ( longueur ) - 1 ( changement de slide ) alors il renvoi 0
+// If ( si) chiffre 0 est inférieur à 0 alors il renvoi le sens de mon slides en longueur - 1.
+// Il va chercher dans mon document HTML, l'élément appelé 'slide', il prend la source d'image de mon slide, puis ajoute ( le slides ( les images en gros ) + 0 (chiffre))
+
+
 let chiffre = 0;
 
 function ChangementDeSlide(sens) {
@@ -25,5 +33,5 @@ function ChangementDeSlide(sens) {
 	chiffre = 0;
 	if (chiffre < 0)
 	chiffre = slides.length - 1;
-	document.getElementById('slide').src = "assets/images/slideshow/" + slide[chiffre]; 
+	document.getElementById('slide').src = "assets/images/slideshow/" + slides[chiffre]; 
 }
