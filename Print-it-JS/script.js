@@ -33,5 +33,7 @@ function ChangementDeSlide(sens) {
 	chiffre = 0;
 	if (chiffre < 0)
 	chiffre = slides.length - 1;
-	document.getElementById('slide').src = "assets/images/slideshow/" + slides[chiffre]; 
+	document.getElementById('banner-img').src = "./assets/images/slideshow/" + slides[chiffre]; 
+	document.getElementsByTagName('p').src = "tagLine" + slides[chiffre]; 
+
 }
