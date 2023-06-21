@@ -26,6 +26,16 @@ const slides = [
 
 
 let chiffre = 0;
+let dots = document.querySelector('dots');
+let paragraphe = document.querySelector('p');
+let bannerImg = document.querySelector('.banner-img');
+
+let flecheGauche = document.querySelector('.arrow_left');
+let flecheDroite = document.querySelector('.arrow_right');
+let sourceImg = './assets/images/slideshow/';
+
+let maxSlides = slides.length;
+
 
 function ChangementDeSlide(sens) {
 	chiffre = chiffre + sens;
@@ -33,7 +43,24 @@ function ChangementDeSlide(sens) {
 	chiffre = 0;
 	if (chiffre < 0)
 	chiffre = slides.length - 1;
-	document.getElementById('banner-img').src = "./assets/images/slideshow/" + slides[chiffre]; 
-	document.getElementsByTagName('p').src = "tagLine" + slides[chiffre]; 
+	bannerImg = "./assets/images/slideshow/" + slides[chiffre]; 
 
 }
+
+flecheGauche.addEventListener('click', function onClick() {
+	console.log('la flèche de gauche fonctionne bien');
+	
+	ChangementDeSlide(-1);
+	
+	
+	})
+	
+
+flecheDroite.addEventListener('click', function onClick() {
+	console.log('la flèche de droite fonctionne bien');
+	
+	ChangementDeSlide(1);
+		
+	})
+		
+	
