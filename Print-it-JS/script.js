@@ -17,51 +17,46 @@ const slides = [
 	}
 ];
 
-// Je défini ( let ) la variable chiffre à 0.
-// Je créer une fonction appelé ChangementDeSlide avec un argument, ( sens) dans ma fonction j'y ajoute
-// la variable chiffre, qui est égal à 0, + le sens de mon slide ( si ces gauche ou droite ).
-// If (si) chiffre est supérieur au sens de mon slides ( longueur ) - 1 ( changement de slide ) alors il renvoi 0
-// If ( si) chiffre 0 est inférieur à 0 alors il renvoi le sens de mon slides en longueur - 1.
-// Il va chercher dans mon document HTML, l'élément appelé 'slide', il prend la source d'image de mon slide, puis ajoute ( le slides ( les images en gros ) + 0 (chiffre))
+// Je defini avec let (= à var) mes variables ainsi que ce qu'elle correspondent
+
+// si c'est un int (float) ou une value, qui recupère dans mon code html la balise ou l'id/class
+
+	let chiffre = 0;
+	let dots = document.querySelector('.dots');
+	let dot = dots.querySelector('.dot');
+	let paragraphe = document.querySelector('p');
+	let bannerImg = document.querySelector('#banner-img');
+	let flecheGauche = document.querySelector('.arrow_left');
+	let flecheDroite = document.querySelector('.arrow_right');
 
 
-let chiffre = 0;
-let dots = document.querySelector('dots');
-let paragraphe = document.querySelector('p');
-let bannerImg = document.querySelector('.banner-img');
+// Je défini ma fonction, lui ajoute un nom Changement de slide ainsi qu'un argument "sens"
+// Si 0 >= à mon slides.length alors il renvoi 0 et si inversement il renvoi 1
+// Si ma slide correspond à 0 alors il change d'images et de paragraphe
 
-let flecheGauche = document.querySelector('.arrow_left');
-let flecheDroite = document.querySelector('.arrow_right');
+	function ChangementDeSlide(sens) {
+		  chiffre = chiffre + sens;
+ 		 if (chiffre >= slides.length)
+ 		   chiffre = 0;
+ 		 else if (chiffre < -1)
+   		 chiffre = slides.length - 1;
 
-let maxSlides = slides.length;
+			if (slides[chiffre]) {
+				bannerImg.src = slides[chiffre].image;
+				paragraphe.innerHTML = slides[chiffre].tagLine;
+			  }
+	}
 
-let TagLine = "image";
+// J'y ajoute un eventListener sur mes flèches, au clic de souris, 
+// dans la console, sa affiche mon message et sa change d'image et de paragraphe
 
+	flecheGauche.addEventListener('click', function onClick() {
+  		console.log('la flèche de gauche fonctionne bien');
+  		ChangementDeSlide(-1);
+	});
 
-function ChangementDeSlide(sens) {
-	chiffre = chiffre + sens;
-	if (chiffre >= slides.lengh - 1)
-	chiffre = 0;
-	if (chiffre <= 0)
-	chiffre = slides.length - 1;
-	bannerImg = "./assets/images/slideshow/" + slides[chiffre]; 
-	paragraphe.innerHTML = slides[chiffre].tagLine;
-}
+	flecheDroite.addEventListener('click', function onClick() {
+  		console.log('la flèche de droite fonctionne bien');
+  		ChangementDeSlide(1);
+	});
 
-flecheGauche.addEventListener('click', function onClick() {
-	console.log('la flèche de gauche fonctionne bien');
-	
-	ChangementDeSlide(1);
-	
-	
-	})
-	
-
-flecheDroite.addEventListener('click', function onClick() {
-	console.log('la flèche de droite fonctionne bien');
-	
-	ChangementDeSlide(0);
-		
-	})
-		
-	
