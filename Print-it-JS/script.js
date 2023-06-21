@@ -35,6 +35,8 @@ let flecheDroite = document.querySelector('.arrow_right');
 
 let maxSlides = slides.length;
 
+let TagLine = "image";
+
 
 function ChangementDeSlide(sens) {
 	chiffre = chiffre + sens;
