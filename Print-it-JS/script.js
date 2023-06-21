@@ -32,25 +32,24 @@ let bannerImg = document.querySelector('.banner-img');
 
 let flecheGauche = document.querySelector('.arrow_left');
 let flecheDroite = document.querySelector('.arrow_right');
-let sourceImg = './assets/images/slideshow/';
 
 let maxSlides = slides.length;
 
 
 function ChangementDeSlide(sens) {
 	chiffre = chiffre + sens;
-	if (chiffre > slides.lengh - 1)
+	if (chiffre >= slides.lengh - 1)
 	chiffre = 0;
-	if (chiffre < 0)
+	if (chiffre <= 0)
 	chiffre = slides.length - 1;
 	bannerImg = "./assets/images/slideshow/" + slides[chiffre]; 
-
+	paragraphe.innerHTML = slides[chiffre].tagLine;
 }
 
 flecheGauche.addEventListener('click', function onClick() {
 	console.log('la flèche de gauche fonctionne bien');
 	
-	ChangementDeSlide(-1);
+	ChangementDeSlide(1);
 	
 	
 	})
@@ -59,7 +58,7 @@ flecheGauche.addEventListener('click', function onClick() {
 flecheDroite.addEventListener('click', function onClick() {
 	console.log('la flèche de droite fonctionne bien');
 	
-	ChangementDeSlide(1);
+	ChangementDeSlide(0);
 		
 	})
 		
