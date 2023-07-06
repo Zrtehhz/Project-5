@@ -17,7 +17,7 @@
 		}
 	];
 
-	// Je defini avec let (= à var) mes variables ainsi que ce qu'elle correspondent
+	
 
 	// si c'est un int (float) ou une value.
 
@@ -50,6 +50,11 @@
 
 
 // chiffre += sens; ajoute la valeur de sens à la variable chiffre. Cela permet de changer l'index actuel de la diapositive en fonction de la valeur de sens.
+
+//L'index (ou chiffre) est augmenté ou diminué en fonction du paramètre sens passé à la fonction. Si sens est positif, l'index est augmenté, ce qui fait passer à la diapositive suivante.
+//Si sens est négatif, l'index est diminué, ce qui fait passer à la diapositive précédente.
+
+
 //   Si la valeur de chiffre est supérieure ou égale à la longueur du tableau slides, cela signifie que l'index dépasse le nombre de diapositives disponibles.
 // Dans ce cas, chiffre est réinitialisé à 0, ce qui permet de boucler et de revenir à la première diapositive.
 
