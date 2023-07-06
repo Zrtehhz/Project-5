@@ -17,7 +17,8 @@
 		}
 	];
 
-	
+	// let permet de lier des variables localement dans la portée des boucles for. 
+	// Contrairement au mot-clé var qui lui rend les variables visibles depuis l'ensemble de la fonction qui contient la boucle.
 
 	// si c'est un int (float) ou une value.
 
@@ -30,6 +31,9 @@
 		let bannerImg = document.querySelector('#banner-img');
 		let flecheGauche = document.querySelector('.arrow_left');
 		let flecheDroite = document.querySelector('.arrow_right');
+		bannerImg.src = slides[chiffre].image;
+		paragraphe.innerHTML = slides[chiffre].tagLine;
+
 
 
 		// Ma fonction updateDots fait ceci : 
@@ -38,6 +42,7 @@
 		// Si l'index de l'élément dot est égal à la valeur de chiffre, alors la classe CSS 'active' est ajoutée à cet élément en utilisant dot.classList.add('active'). 
 		// Et inversement, si l'élément dot n'est pas égal à la valeur chiffre alors la classe CSS 'active' est supprimé.
 
+		
 	function updateDots() {
 		dots.forEach((dot, index) => {
 			if (index === chiffre) {
